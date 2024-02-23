@@ -1,0 +1,71 @@
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  /* font-size: 62.5%; */
+  font-family: "Urbanist", sans-serif;
+
+}
+h1{
+  text-align: center;
+}
+/* p {
+  font-size: 18px;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  line-height: 1.5;
+} */
+
+.section-border {
+  width: 500px;
+  height: 500px;
+  margin: 10px auto 10px;
+  
+  background-image: linear-gradient(to left bottom,red,yellow);
+  background-image: radial-gradient(circle,red,yellow);
+  /* border: 5px solid red; */
+  /* border-radius: 50%; */
+  border-top: 22px solid red;
+  border-bottom: 10px dashed blue;
+  border-left: 10px inset green;
+  border-right: 10px outset black;
+  border-top: 20px groove purple;
+
+  border-radius: 10px 40px 70px 100px;
+  /* border-top-left-radius: 250px; */
+
+  border-radius: 0;
+  border-radius: 40px 5px;
+  border-radius: 50px 100px 10px;
+  border-radius: 50% 50% 10px;
+
+
+
+
+
+  /* border-style: solid; */
+
+  /* background-color: #5e9de9; */
+  /*?  border here  */
+  /* border: 15px solid #003180; */
+
+  /*?  write each property individual  */
+  /* border-width: 15px;
+  border-style: solid;
+  border-color: #003180; */
+
+  /*? we can write them individually too  */
+  border-top: 15px solid #003180;
+  border-right: 15px dotted red;
+  border-bottom: 15px ridge green;
+  border-left: 15px double #003b99;
+
+  border-top-width: 30px;
+
+  border-top-style: groove;
+  border-top-color: blue;
+}

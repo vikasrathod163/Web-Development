@@ -1,0 +1,62 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Urbanist;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(
+      to right top,
+      rgba(5, 25, 55, 0.9),
+      rgba(0, 77, 122, 0.9),
+      rgba(0, 135, 147, 0.9),
+      rgba(0, 191, 114, 0.9),
+      rgba(168, 235, 18, 0.9)
+    ),
+    url("https://images.pexels.com/photos/3888151/pexels-photo-3888151.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#main-heading {
+  padding: 40px 0;
+  font-weight: bolder;
+  font-size: 48px;
+  border-left: 5px dashed red;
+  border-right: 5px dashed red;
+  border-bottom: 2px ridge red;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  margin: 20px;
+  color: #c80aee;
+  text-align: center;
+}
+
+p {
+  padding: 10px;
+  line-height: 1.6;
+  letter-spacing: 1px;
+  font-size: 12px;
+  margin: 5px;
+  border: 5px solid rgba(136, 0, 255, 0.666);
+  border-style: double;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* box model css  */
+.section-one {
+  padding: 50px;
+  width: 1200px;
+  background-color: #5e9de9;
+  color: #fff;
+  margin-top: 30px;
+  margin-left: 20px;
+  margin: 10px auto 20px;
+}

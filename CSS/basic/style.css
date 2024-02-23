@@ -1,0 +1,27 @@
+/*  #ff3368; #ecfdff; */
+
+/* tag selector*/
+
+p{
+    color: #000;
+    background-color:#ff3368;;
+}
+
+/*id selectors*/
+
+#para{
+    color: white;
+}
+
+/*class selectors*/
+
+.head{
+    color: green;
+}
+
+/*psuedo selector*/
+
+button:hover{
+    background-color:#ecfdff;;
+}
+

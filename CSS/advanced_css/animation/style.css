@@ -1,0 +1,62 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Jost";
+}
+
+body {
+  background-color: #2b3033;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+}
+
+h1 {
+  padding: 50px;
+  color: #fff;
+  font-size: 48px;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: #4861ec;
+  box-shadow: 0 0 0px 15px #353f6d;
+  margin: 50px;
+  display: inline-block;
+  border-radius: 50%;
+  /*? animation start here  */
+  animation-name: trip;
+  animation-duration: 2.5s;
+  animation-timing-function: linear;
+  /* animation-delay: 2s; */
+  animation-iteration-count: 2;
+  animation-direction: alternate;
+  /* animation-fill-mode: backwards; */
+}
+@keyframes trip {
+  0% {
+    background-color: #ffbb5cb5;
+    transform: translate(200px, 0%);
+  }
+  25% {
+    background-color: #fcbf49;
+    transform: translate(calc(90vw - 10%));
+  }
+  50% {
+    background-color: #000000;
+    transform: translate(calc(90vw - 10%), 500px);
+  }
+  75% {
+    background-color: #fcbf49;
+    transform: translate(20%, 500px);
+  }
+  100% {
+    background-color: #ffbb5cb5;
+    transform: translate(20%, 0%);
+  }
+}
