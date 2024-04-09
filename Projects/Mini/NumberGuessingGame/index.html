@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guess The Number</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Guess The Number</h1>
+      <div class="box">
+        <div class="attempts">Attemps : <span class="count">0</span></div>
+        <div class="prev">
+          Previous Guess : <span class="prev-guess">0</span>
+        </div>
+        <div class="playing-box">
+          <input
+            type="number"
+            class="num"
+            placeholder="Guess The Number (Enter Number Here)"
+          />
+          <button class="check">Check</button>
+          <div class="navigator">Target is Set</div>
+          <!-- <input type="text" name="result" id="result"> -->
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let user = document.querySelector(".num");
+      let checkBtn = document.querySelector(".check");
+      let navigator = document.querySelector(".navigator");
+      let attemptCnt = document.querySelector(".count");
+      let prev = document.querySelector(".prev-guess");
+
+      let attempt = 0;
+      let isNewGame = false;
+
+      if (!isNewGame) {
+        checkBtn.addEventListener("click", () => {
+          let comp = 50;
+          console.log("Clicked");
+
+          let isWon = false;
+
+          setTimeout(() => {
+            if (user.value == 50) {
+              attempt++;
+              navigator.innerText = `Right Guess | Attempts Taken : ${attempt}`;
+              user.style.display = "none";
+              checkBtn.value = "Play Again!";
+              isWon = true;
+            } else if (user.value < 50) {
+              navigator.innerText = "Guessed Number is Lesser...";
+              attempt++;
+            } else {
+              navigator.innerText = "Guessed Number is Greater...";
+              attempt++;
+            }
+            attemptCnt.innerText = attempt;
+            prev.innerText = user.value;
+            user.value = "";
+          }, 1000);
+
+          checkBtn.innerHTML =
+            "<span class='icon'><i class='fa fa-spinner fa-spin'></i> Checking...</span>";
+
+          setTimeout(() => {
+            if (!isWon) {
+              checkBtn.innerHTML = "<span>Check</span>";
+            } else {
+              checkBtn.innerHTML = "<span>Play Again!</span>";
+              
+            }
+          }, 1000);
+        });
+      }
+      else{
+        user.style.display = "block";
+        attempt = 0;
+        prev = 0;
+        isNewGame = false;
+      }
+    </script>
+  </body>
+</html>

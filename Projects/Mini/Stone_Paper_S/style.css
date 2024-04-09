@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(143, 28, 238);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    width: 80%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    & .options{
+        width: 95%;
+        height: 150px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        gap: 10px;
+        
+
+        & div{
+            width: 150px;
+            aspect-ratio: 1;
+            text-align: center;
+            line-height: 150px;
+            border-radius: 50%;
+        }
+
+        & div:hover{
+            border: 2px solid red;
+            cursor: pointer;
+        }
+    }
+
+    & .score{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 100%;
+        height: fit-content;
+
+        & div{
+            width: 100px;
+            height: fit-content;
+            text-align: center;
+            line-height: 70px;
+            font-size: larger;
+
+            & div{
+                font-size: 4rem;
+            }
+
+            & p{
+                text-align: center;
+            }
+        }
+    }
+
+    & .message{
+        width: 50%;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+    }
+}
+/* 
+div{
+    border: 2px solid black;
+} */
+
+
+
+@media  (max-width : 950px){
+    .options{
+        gap: 10px;
+    }
+    div{
+        border: 2px solid red;
+    }
+}
+
+

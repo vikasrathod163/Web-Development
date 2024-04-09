@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events in javaScript!</title>
+    <style>
+        body{
+            width: 100%;
+            height: 100vh;
+            background-color: rgb(54, 20, 62);
+            display: grid;
+            place-content: center;
+        }
+        button{
+            width: 100px;
+            height: 50px;
+            margin-top: 5px;
+        }
+        .container{
+            margin-top: 5px;
+            width: 200px;
+            aspect-ratio: 1;
+            border: 1px solid black;
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <!--Inline JS-->
+    <button id="btn" ondblclick="console.log('Double Clicked!')" onclick="console.log('Button is Clicked!'); alert('Button is Clicked!')">Click Me!</button>
+    
+    <!--Using JS-->
+    <button id="btn2">Button Two</button>
+    <button id="btn3">Button Three</button>
+    <button id="btn4" onkeypress="console.log('Key pressed...')">Button Four</button>
+
+    <button id="btn5">Button Five</button>
+
+
+    <div class="container">
+
+    </div>
+    <script src="hello.js"></script>
+</body>
+</html>

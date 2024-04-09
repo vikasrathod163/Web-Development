@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stone-Paper-Scissor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="options">
+            <div class="option-1 op" id="stone">Stone</div>
+            <div class="option-2 op" id="paper">Paper</div>
+            <div class="option-3 op" id="scissor">Scissor</div>
+        </div>
+        <div class="score">
+            <div >
+                <div class="user-score">0</div>
+                <p>YOU</p>
+                
+            </div>
+            <div >
+                <div class="comp-score">0</div>
+                <p>COMP</p>
+            </div>
+        </div>
+
+        <div class="message">PLAY THE MOVE!</div>
+    </div>
+
+    <script>
+        let option = document.querySelectorAll(".op");
+        let msg = document.querySelector(".message");
+        let user_score = document.querySelector(".user-score");
+        let comp_score = document.querySelector(".comp-score");
+
+        let user_cnt = 0;
+        let comp_cnt = 0;
+
+        option.forEach(
+            (op) => {
+                let o = op.getAttribute("id");
+                op.addEventListener("click",() =>{
+                    console.log("button is clicked! and id is : ",o);
+                    play(o);
+                })
+            }
+        )
+
+        let comp_choice = () =>{
+
+            let choice = ["stone","paper","scissor"];
+            let ch = Math.floor(Math.random() * 3);
+            return choice[ch];
+        }
+
+        update = (user_win,user,comp) =>{
+            user = user.toUpperCase();
+            comp = comp.toUpperCase();
+            if(user_win == 1){
+                user_cnt++;
+                user_score.innerText = user_cnt;
+                msg.style.backgroundColor = "green";
+                msg.style.color = 'white';
+                msg.innerText = `You Won! Your ${user} beats ${comp}`;
+            }
+            else if(user_win == 2){
+                comp_cnt++;
+                comp_score.innerText = comp_cnt;
+                msg.style.backgroundColor = "red";
+                msg.style.color = 'white';
+                msg.innerText = `You Lost!  ${comp} beats  Your ${user}`;
+            }
+            else{
+                msg.style.backgroundColor = "yellow";
+                msg.style.color = 'black';
+                msg.innerText = "Match Draw, Try again";
+            }
+        }
+
+        let play = (option) =>{
+            console.log("user : ",option);
+
+            let com = comp_choice();
+            console.log("comp : ",com);
+
+            let user_win = 0;
+            if(option === com){
+                user_win = 0;        
+            }
+            else{
+                if(option === "stone"){
+                    user_win = com === 'paper' ? 2 : 1;
+                }
+                else if(option === "paper"){
+                    user_win = com === 'scissor' ? 2 : 1;
+                }
+                else{
+                    user_win = com === 'stone' ? 2 : 1;
+                }
+            }
+            
+            update(user_win,option,com);
+        }
+    </script>
+</body>
+</html>
