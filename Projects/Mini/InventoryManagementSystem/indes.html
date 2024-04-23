@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="inventoryApp">
+
+<head>
+    <title>Inventory Management System</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div ng-controller="InventoryController as inventoryCtrl">
+        <h1>Inventory Management System</h1>
+
+        <form ng-submit="inventoryCtrl.addItem()">
+            <label>
+                Item Name:
+                <input type="text" ng-model="inventoryCtrl.newItem.name" placeholder="Enter item name" required>
+            </label>
+            <label>
+                Quantity:
+                <input type="number" ng-model="inventoryCtrl.newItem.quantity" placeholder="Enter quantity" required>
+            </label>
+            <button type="submit">Add Item</button>
+        </form>
+
+        <ul>
+            <li ng-repeat="item in inventoryCtrl.items">
+                {{item.name}} - {{item.quantity}}
+                <button ng-click="inventoryCtrl.removeItem($index)">Remove</button>
+                <button ng-click="inventoryCtrl.editItem($index)">Edit</button>
+            </li>
+        </ul>
+
+        <div ng-show="inventoryCtrl.editMode">
+            <h2>Edit Item</h2>
+            <form ng-submit="inventoryCtrl.updateItem()">
+                <label>
+                    Item Name:
+                    <input type="text" ng-model="inventoryCtrl.selectedItem.name" required>
+                </label>
+                <label>
+                    Quantity:
+                    <input type="number" ng-model="inventoryCtrl.selectedItem.quantity" required>
+                </label>
+                <button type="submit">Update</button>
+                <button ng-click="inventoryCtrl.cancelEdit()">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
